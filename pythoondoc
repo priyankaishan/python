@@ -1,0 +1,257 @@
+Python Introduction:
+	Python is a high-level, interpreted programming language known for its simplicity and readability.
+	and its syntax allows developers to express concepts in fewer lines of code than languages like C++ or Java.
+
+
+   *Key features of Python include:
+
+	Readability: Python's syntax is designed to be clear and readable, making it easy for developers to write and maintain code.
+
+	Versatility: Python is a versatile language used in various domains, including web development, data science, artificial intelligence, automation, and more.
+
+	Extensibility: Python can be extended by incorporating modules and libraries, making it easy to integrate with other languages.
+
+	Community Support: Python has a large and active community, contributing to its rich ecosystem of libraries, frameworks, and resources. 
+	
+
+    *Basic Python Concepts:
+     	data types, including integers, floats, strings, lists, tuples, and dictionaries.
+
+	Control Structures: Python uses indentation to define blocks of code. Control structures include if statements, for loops, and while loops. 
+	
+	Functions: Functions in Python are defined using the def keyword.
+	
+	Lists:
+	Mutable: Lists are mutable, meaning you can add, remove, or modify elements after the list is created.using square brackets [].
+	when the order of elements may need to be changed during the program, or when you need a dynamic collection. Lists have several built-in methods for adding, removing, and modifying elements, 
+	such as append(), extend(), pop(), and more.
+	
+	Tuples:
+	Immutable: Tuples are immutable, meaning once a tuple is created, you cannot modify its elements.using parentheses ().
+	Use tuples when you want to create a collection of items that should remain constant throughout the program, especially when the sequence should not be changed accidentally.
+	Tuples have fewer built-in methods compared to lists because they are immutable. Common operations include count() and index().
+	
+	Zip: zip is used to iterate over two or more lists in parallel.
+	
+		a = [1, 2, 3]
+		b = [7, 8, 9]
+		[(x + y) for (x,y) in zip(a,b)]  # parallel iterators
+		# output => [8, 10, 12]
+	
+	Dictionary: A dictionary is an unordered collection of key-value pairs.
+	
+	
+	*Function Parameters and Return Values:
+	   In Python, functions can take parameters (inputs) and return values (outputs).
+	   
+	*Lambda Functions:
+	    An anonymous function in Python is a function without a name. It can be immediately invoked or stored in a variable. Anonymous functions in Python are also known as lambda functions.
+	    Lambda functions are anonymous functions defined using the lambda keyword. They are often used for short, simple operations.
+	    
+	    lambda arguments: expression
+
+	    
+	    # Regular function
+		def square(x):
+		    return x ** 2
+
+	    # Equivalent lambda function
+		square_lambda = lambda x: x ** 2
+
+		print(square(4))         # Output: 16
+		print(square_lambda(4))  # Output: 16
+		
+		
+	*Higher-order function:
+	A higher-order function is a function that either takes one or more functions as arguments or returns a function as its result.This is useful when you want to customize the behavior of a function 
+	by providing different functions as arguments.
+
+		1: Applying an Operation:
+			def apply_operation(x, y, operation):
+ 		        """Applies a binary operation to x and y."""
+    			return operation(x, y)
+
+			# Functions for different operations
+			def add(a, b):
+		        return a + b
+
+			def multiply(a, b):
+		         return a * b
+
+			# Using apply_operation with different operations
+			result_addition = apply_operation(3, 5, add)
+			result_multiplication = apply_operation(3, 5, multiply)
+
+			print(result_addition)        # Output: 8
+			print(result_multiplication)  # Output: 15
+	
+		2: Generating Functions Dynamically:
+			def power_of(n):
+  		        """Returns a function that calculates the power of n."""
+ 		        def power(x):
+      			 return x ** n
+    			return power
+
+			# Generating functions for different powers
+			square = power_of(2)
+			cube = power_of(3)
+
+			print(square(4))  # Output: 16
+			print(cube(3))    # Output: 27
+			
+	*Common Higher-Order Functions in Python:
+		Python's standard library provides several higher-order functions, such as map(), filter(), sorted(), and functools.reduce(), which operate on functions or take functions as arguments.
+		
+		# Example using map() to apply a function to each element of a list
+		numbers = [1, 2, 3, 4, 5]
+		squared_numbers = list(map(lambda x: x ** 2, numbers))
+		print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+		
+		
+	*Classes and Objects:
+	
+		class Dog:
+    			def __init__(self, name, age):
+        			self.name = name
+        			self.age = age
+
+    			def bark(self):
+        			print("Woof!")
+
+		# Creating objects (instances) of the Dog class
+		dog1 = Dog("Buddy", 3)
+		dog2 = Dog("Max", 5)
+
+		# Accessing attributes and calling methods
+		print(dog1.name)  # Output: Buddy
+		dog2.bark()       # Output: Woof!
+		
+		Dog is a class with attributes (name and age) and a method (bark). We create two instances of the Dog class (dog1 and dog2) and access their attributes and methods.
+
+	*2. Inheritance:
+		
+	*3. Encapsulation: Encapsulation involves bundling the data (attributes) and the methods that operate on the data into a single unit, known as a class. It helps hide the internal details of the 
+	class and provides a way to control access to the data.
+	
+	*4. The word "polymorphism" means "many forms", and in programming it refers to methods/functions/operators with the same name that can be executed on many objects or classes.
+	
+	
+	
+	*NumPy:
+
+		NumPy is a fundamental package for scientific computing with Python. It provides support for large, multi-dimensional arrays and matrices, along with mathematical functions to operate on 
+		these arrays.
+
+		import numpy as np
+
+		# Creating a NumPy array
+		my_array = np.array([1, 2, 3, 4, 5])
+
+
+		Aspect					Flask										Django
+		
+	Philosophy and Design		Micro-framework, flexible, fewer conventions				Full-stack framework, opinionated, follows Django way
+	Project Structure		Simple, no enforced structure						Well-defined structure, includes apps, models, views, etc.
+	ORM and Database		SQLAlchemy (external ORM)						Django ORM (built-in), tightly integrated, multiple databases
+	Template Engine			Jinja2									Django Template Language (DTL)
+	Community and Ecosystem		Lightweight, diverse ecosystem						Comprehensive, bundled functionality, less need for extras
+	Learning Curve			Gentle learning curve							Steeper learning curve, especially for beginners
+	Use Cases			Small to medium-sized projects						Larger projects, projects requiring built-in features
+	Popularity			Widely used, popular for micro-frameworks				Highly popular, especially for larger applications
+
+
+ global, protected and private attributes in Python:
+
+	Public attributes have no special naming conventions.
+		class MyClass:
+   			 def __init__(self):
+        		 self.public_attribute = "I am public"
+
+		  obj = MyClass()
+	          print(obj.public_attribute)
+
+
+	Protected attributes have a single leading underscore.
+		
+		self._protected_attribute = "I am protected"
+		obj = MyClass()
+	        print(obj._protected_attribute) 
+	        
+
+	Private attributes have a double leading underscore and undergo name mangling to make access more challenging from outside the class.
+	
+		        self.__private_attribute = "I am private"
+
+			obj = MyClass()
+			# Accessing directly will raise an AttributeError
+			# print(obj.__private_attribute)  # Uncommenting this line will result in an error
+			print(obj._MyClass__private_attribute)  # Correct way to access a name-mangled
+			private attribute
+			
+	What is __init__?
+		__init__ is a contructor method in Python and is automatically called to allocate memory when a new object/instance is created.
+			
+			
+			
+	What is monkey patching in Python?
+In Python, the term monkey patch only refers to dynamic modifications of a class or module at run-time.
+
+# g.py
+class GeeksClass:
+    def function(self):
+        print "function()"
+
+import m
+def monkey_function(self):
+    print "monkey_function()"
+ 
+m.GeeksClass.function = monkey_function
+obj = m.GeeksClass()
+obj.function()
+			
+			
+			# Without walrus operator
+number = 10
+if number > 5:
+    print(f"{number} is greater than 5")
+
+# With walrus operator
+if (number := 10) > 5:
+    print(f"{number} is greater than 5")
+			
+			
+	* Decorators in Python are a powerful and flexible way to modify or extend the behavior of functions or methods. They allow you to wrap a function with additional functionality without modifying its source code directly.
+	
+		def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+
+
+* Choosing Between Lists and Generators:
+Use lists when:
+
+You need random access to elements.
+You will access elements multiple times.
+The dataset is small enough to fit comfortably in memory.
+Use generators when:
+
+Memory efficiency is a priority, especially for large or infinite sequences.
+You only need to iterate once or a limited number of times.
+	
+		list : # Creating a list of squares
+			squares_list = [x**2 for x in range(10)]
+			
+		generators: # Creating a generator of squares
+			squares_generator = (x**2 for x in range(10))
+
+
+			

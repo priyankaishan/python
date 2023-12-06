@@ -1,0 +1,53 @@
+ 1* Set Up a Django Project and App:
+
+	1. django-admin startproject myproject
+	2. cd myproject
+	3. python3 manage.py startapp myapp
+	
+ 2* Configure Database in Settings:
+ 
+ 	# myproject/settings.py
+
+	DATABASES = {
+ 	   'default': {
+  	      'ENGINE': 'django.db.backends.postgresql',
+  	      'NAME': 'your_database_name',
+  	      'USER': 'your_database_user',
+  	      'PASSWORD': 'your_database_password',
+  	      'HOST': 'localhost',
+  	      'PORT': '5432',
+   	 }
+	}
+
+ 3* Install Required Packages:
+ 
+ 	pip install djangorestframework psycopg2-binary
+
+ 4* Create Models:	
+ 
+ 	for check db connection ->  python3 manage.py check
+
+        then create models in   # myapp/models.py
+
+ 5* Create Migrations and Apply:
+ 
+ 	python3 manage.py makemigrations
+	python3 manage.py migrate
+	
+ 6* Create Serializers:
+ 
+ 	Create a serializer in the myapp/serializers.py file.
+ 	
+ 7* Create Views:
+ 
+ 	myapp/views.py -> from rest_framework import generics (includee this)
+
+ 8* Configure URLs:
+ 
+ 	-> # myapp/urls.py and # myproject/urls.py
+
+ 9*  Run the Development Server:
+ 
+ 	python3 manage.py runserver
+
+
